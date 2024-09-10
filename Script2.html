@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Part 2 of second homework">
+    <title>Script 2 Solution</title>
+    <style>
+        input {text-align: right;}
+        body {background-color: lightsteelblue;}
+        .body { width: 550px; margin: 0px auto;}
+        </style>
+    <body>
+    <p>
+        <a href="hw1.0.html"><button>Back to Home Page</button></a>
+    </p>
+    </body>
+        
+        <script>
+        //JavaScript code for the input and number computation
+        
+        function enterNumbers()
+        {
+        var number1, number2, number3, n1, n2, n3, sum, product, average, min, max;
+        
+        number1 = document.getElementById("num1").value;
+        
+        number2 = document.getElementById("num2").value;
+
+        number3 = document.getElementById("num3").value;
+        
+        n1 = parseInt(number1);
+        n2 = parseInt(number2);
+        n3 = parseInt(number3);
+        sum = n1 + n2 + n3;
+        product = n1 * n2 * n3;
+        average = (sum / 3);
+        min = Math.min(n1, n2, n3)
+        max = Math.max(n1, n2, n3)
+        document.forms["myform"].elements["sum"].value = sum;
+        document.forms["myform"].elements["product"].value = product;
+        document.forms["myform"].elements["average"].value = average;
+        document.forms["myform"].elements["min"].value = min;
+        document.forms["myform"].elements["max"].value = max;
+        
+        }
+        </script>
+        </head>
+
+        <body>
+        
+        <section class="body">
+        
+        <form name="myform">
+        <table>
+        <h4>Welcome! Please Enter 3 Numbers of Your Choice!</h4>
+        <tr>
+        <td><label for="num1"><strong>Enter First Number:</strong></label></td>
+        <td><input type="number" name="num1" id="num1"></td>
+        </tr>
+        
+        <tr>
+        <td><label for="num2"><strong>Enter Second Number:</strong></label></td>
+        <td><input type="number" name="num2"id="num2"></td>
+        </tr>
+
+        <tr>
+        <td><label for="num3"><strong>Enter Third Number:</strong></label></td>
+        <td><input type="number" name id="num3"></td>
+        </tr>
+        
+        <tr>
+        <td><strong>Sum is:</strong></td>
+        <td><input type="number" name="sum" readonly></td>
+        </tr>
+
+        <tr>
+        <td><strong>Product is:</strong></td>
+        <td><input type="number" name="product" readonly></td>
+        </tr>
+
+        <tr>
+        <td><strong>Average of the 3 numbers is:</strong></td>
+        <td><input type="number" name="average" readonly></td>
+        </tr>
+
+        <tr>
+        <td><strong>Lowest Number:</strong></td>
+        <td><input type="number" name="min" readonly></td>
+        </tr>
+
+        <tr>
+        <td><strong>Highest Number:</strong></td>
+        <td><input type="number" name="max" readonly></td>
+        </tr>
+        
+        </table>
+        <br><br>
+        
+        <input type="button" onclick="enterNumbers()" value="SUBMIT">
+        <input type="reset" value="RESET">
+        </form>
+        </section>
+        </body>
+
+
+<a href="Part 2.html"><link>Return to "Part 2" Page</link></a>
+</p>
+<a href="hw2.0.html"><link>Back to Homework 2 Main Page</link></a>
+</p>
+           
+</body>
+</html>
