@@ -20,26 +20,26 @@
         function enterNumbers()
         {
         var homework, midTerm, final, participation, n1, n2, n3, n4, average, finalGrade;
-
         var errMsg1 = "<span style='font-weight: bold; color: red; font-size: 20px;'>Invalid, Please enter number between 1-100</span>";
         
         homework = document.getElementById("num1").value;
-        
         midTerm = document.getElementById("num2").value;
-
         final = document.getElementById("num3").value;
-
         participation = document.getElementById("num4").value;
        
-        average = (.5 * homework) + (.2 * midTerm) + (.2 * final) + (.1 * participation)
-
-        finalGrade 
-        if (average > 90)
+        if ( homework > 100 || homework < 0 || midTerm > 100 || midTerm < 0 || final > 100 || final < 0 || participation > 100 || participation < 0)
             {
-                document.forms["myform"].elements["finalGrade"].value=("A");
+                document.getElementById("errOut").innerHTML = errMsg1;
             }
-            
-            if (average >= 80 && average <= 89 )
+        else {    
+            average = (.5 * homework) + (.2 * midTerm) + (.2 * final) + (.1 * participation)
+
+            finalGrade 
+            if (average > 90)
+                {
+                    document.forms["myform"].elements["finalGrade"].value=("A");
+                }
+            else if (average >= 80 && average <= 89 )
                 {
                     document.forms["myform"].elements["finalGrade"].value=("B");   
                 }
@@ -57,21 +57,10 @@
                     document.forms["myform"].elements["finalGrade"].value=("F. Student must retake the course");   
                 }
 
-        if ( homework > 100 || homework < 0 || midTerm > 100 || midTerm < 0 || final > 100 || final < 0 || participation > 100 || participation < 0)
-            {
-                document.getElementById("errOut").innerHTML = errMsg1;
-            }
-        else {
-
-                n1 = parseInt(homework);
-                n2 = parseInt(midTerm);
-                n3 = parseInt(final);
-                n4 = parseInt(participation);   
-
-        }
-
-        document.forms["myform"].elements["average"].value = average;
         
+
+            document.forms["myform"].elements["average"].value = average;
+            }
         }
         </script>
         
