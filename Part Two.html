@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Part 2 of third homework">
+    <title>Part Two</title>
+</head>
+<body>
+    <body style="background-color:whitesmoke"></body>
+    <h1 style="text-align: center; color: black">Homework 3 - <u>Part 2</u></h1>
+    <a href="hw1.0.html"><button>Back to Home Page</button></a>
+    <p>For homework 3 part 2: Commission Calculations for sales team.</p>
+    <a href="hw3.0.html"><link>Back to Homework 3 Main Page</link></a>
+    </p>
+
+    <section class="body"></section>
+
+    <p> Sales Price Per Item #</p>
+    
+        
+    <form name="myform">
+        <table>
+            <tr>
+              <th>Items</th>
+              <th>Value</th>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td>20.99</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>12.75</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>9.95</td>
+            </tr>
+            <tr>
+               <td>4</td>
+               <td>35.89</td>
+              </tr>
+          </table>
+          
+
+<script>
+function Submit() {
+var name = "";
+var item1 = 0, item2 = 0, item3 = 0, item4 = 0;
+var total1 = 0, total2 = 0, total3 = 0, total4 = 0;
+var totalSold = 0;
+var totalEarned = 0;
+var errormsg = "";
+const p1 = 20.99;
+const p2 = 12.75;
+const p3 = 9.95;
+const p4 = 35.89;
+name = document.getElementById("fullname").value;
+if (name =="")
+{
+    name = "Please enter Seller's Name for Proper Record Keeping";
+}
+
+item1 = parseInt(document.getElementById("q1").value);
+item2 = parseInt(document.getElementById("q2").value);
+item3 = parseInt(document.getElementById("q3").value);
+item4 = parseInt(document.getElementById("q4").value);
+
+if (item1 < 0 || item2 < 0 || item3 < 0 || item4 < 0 || isNaN(item1) || isNaN(item2) || isNaN(item3) || isNaN(item4))
+{
+document.getElementById("output").innerHTML = "<strong><em>You did not type a number, please try again<br>"
+document.getElementById("q1displayed").value = "";
+document.getElementById("q2displayed").value = "";
+document.getElementById("q3displayed").value = "";
+document.getElementById("q4displayed").value = "";
+document.getElementById("total1displayed").value = "";
+document.getElementById("total2displayed").value = "";
+document.getElementById("total3displayed").value = "";
+document.getElementById("total4displayed").value = "";
+document.getElementById("totalSold").value = "";
+document.getElementById("totalEarned").value = "";
+
+}
+else
+{
+    document.getElementById("output").innerHTML = "<strong><em>" + name + "</em></strong>"
+    total1 = item1 * p1;
+    total2 = item2 * p2;
+    total3 = item3 * p3;
+    total4 = item4 * p4;
+    totalSold = total1 + total2 + total3 + total4;
+    totalEarned = (totalSold * .09) + 250.00;
+
+totalamt = total1 + total2 + total3 + total4;
+total1 = total1.toFixed(2);
+total2 = total2.toFixed(2);
+total3 = total3.toFixed(2);
+total4 = total4.toFixed(2);
+totalSold = totalSold.toFixed(2);
+totalEarned = totalEarned.toFixed(2);
+
+document.getElementById("q1displayed").value = item1;
+document.getElementById("q2displayed").value = item2;
+document.getElementById("q3displayed").value = item3;
+document.getElementById("q4displayed").value = item4;
+document.getElementById("total1displayed").value = total1;
+document.getElementById("total2displayed").value = total2;
+document.getElementById("total3displayed").value = total3;
+document.getElementById("total4displayed").value = total4;
+document.getElementById("totalSold").value = totalSold;
+document.getElementById("totalEarned").value = totalEarned;
+}
+}
+</script>
+</head>
+<body>
+<main></main>
+<!-- <h2>Total Bill at the Market</h2> -->
+<p> For each item type the quantity sold by the seller</p><br>
+<form>
+<table>
+<tr>
+<td><label for="fullname">Seller's Name: </label></td>
+<td><input type="text" name="fullname" id="fullname" style="width: 200px" size= "50"></input></td>
+</tr>
+<tr>
+<td><label for ="q1">Item 1: </label></td>
+<td><input type= "number" name="q1" id ="q1" min= "0"></td>
+</tr>
+<tr>
+<td><label for="q2">Item 2: </label></td>
+<td><input type= "number" name="q2" id ="q2" min= "0"></td>
+</tr>
+<tr>
+<td><label for="q2">Item 3: </label></td>
+<td><input type= "number" name="q3" id ="q3" min= "0"></td>
+</tr>
+<tr>
+<td><label for="q2">Item 4: </label></td>
+<td><input type= "number" name="q4" id ="q4" min= "0"></td>
+</tr>
+<tr>
+    <td style="text-align:center;">
+        <input type= "button" onclick="Submit();" value="Submit"><br>
+    </td>
+    <td style="text-align:center;">
+        <input type= "reset" value="Clear Form">
+    </td>
+</tr>
+</table>          
+<table>
+    <tr>
+        <td colspan="4" id="output"></td>
+    </tr>
+<tr>
+<th>Item #</th>
+<th>Price</th>
+<th>Quantity Sold</th>
+<th>Total $</th>
+</tr>
+<tr>
+<td>1</td>
+<td>$20.99</td>
+<td><input type="number" name="q1displayed" id="q1displayed" readonly></td>
+<td><input type="number" name="total1displayed" id="total1displayed" readonly></td>
+</tr>
+<tr>
+<td>2</td>
+<td>$12.75</td>
+<td><input type="number" name="q2displayed" id="q2displayed" readonly></td>
+<td><input type="number" name="total2displayed" id="total2displayed" readonly></td>
+</tr>
+<tr>
+<td>3</td>
+<td>$9.95</td>
+<td><input type="number" name="q3displayed" id="q3displayed" readonly></td>
+<td><input type="number" name="total3displayed" id="total3displayed" readonly></td>
+</tr>
+<tr>
+<td>4</td>
+<td>$35.89</td>
+<td><input type="number" name="q4displayed" id="q4displayed" readonly></td>
+<td><input type="number" name="total4displayed" id="total4displayed" readonly></td>
+</tr>
+
+</table>
+<br></br>
+<tr>
+<td>Total Amount Sold</td>
+<td><input type="number" name="totalSold" id="totalSold" readonly></td>
+</tr>
+<br></br>
+<tr>
+<td>Total Weekly Earnings</td>
+<td><input type="number" name="totalEarned" id="totalEarned" readonly></td>
+</tr>
+           
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Part 1 of second homework">
+    <title>Part One</title>
+</head>
+<body>
+    <body style="background-color:lightgray">
+    <h1 style="text-align: center; color: green"><u>Student Grades</u></h1>
+    <a href="hw1.0.html"><button>Back to Home Page</button></a>
+    <p>For homework 3 part 1, Tool for calculating student grades.</p>
+    <p>
+    <a href="hw3.0.html"><link>Back to Homework 3 Main Page</link></a>
+    </p>
+
+    <p> Points/Percentage to Letter Grade:</p>
+
+    <form name="myform"></form>
+        <table>
+            <tr>
+              <th>Percentage</th>
+              <th>Letter Grade</th>
+            </tr>
+            <tr>
+              <td>90-100</td>
+              <td>A</td>
+            </tr>
+            <tr>
+              <td>80-89</td>
+              <td>B</td>
+            </tr>
+            <tr>
+              <td>70-79</td>
+              <td>C</td>
+            </tr>
+            <tr>
+               <td>60-69</td>
+               <td>D</td>
+              </tr>
+            <tr>
+               <td>0-59</td>
+               <td>F</td>
+              </tr>
+          </table>
+
+    <script>
+        //JavaScript code for the inputs and grade computations
+        
+        function enterNumbers()
+        {
+        var homework, midTerm, final, participation, n1, n2, n3, n4, average, finalGrade;
+
+        var errMsg1 = "<span style='font-weight: bold; color: red; font-size: 20px;'>Invalid, Please enter number between 1-100</span>";
+        
+        homework = document.getElementById("num1").value;
+        
+        midTerm = document.getElementById("num2").value;
+
+        final = document.getElementById("num3").value;
+
+        participation = document.getElementById("num4").value;
+       
+        average = (.5 * homework) + (.2 * midTerm) + (.2 * final) + (.1 * participation)
+
+        finalGrade 
+        if (average > 90)
+            {
+                document.forms["myform"].elements["finalGrade"].value=("A");
+            }
+            
+            if (average >= 80 && average <= 89 )
+                {
+                    document.forms["myform"].elements["finalGrade"].value=("B");   
+                }
+            
+            else if (average >= 70 && average <= 79 )
+                {
+                    document.forms["myform"].elements["finalGrade"].value=("C");
+                }
+            else if (average >= 60 && average <= 69 )
+                {
+                    document.forms["myform"].elements["finalGrade"].value=("D. Student must retake the course");   
+                }
+            else if (average >= 0 && average <= 59 )
+                {
+                    document.forms["myform"].elements["finalGrade"].value=("F. Student must retake the course");   
+                }
+
+        if ( homework > 100 || homework < 0 || midTerm > 100 || midTerm < 0 || final > 100 || final < 0 || participation > 100 || participation < 0)
+            {
+                document.getElementById("errOut").innerHTML = errMsg1;
+            }
+        else {
+
+                n1 = parseInt(homework);
+                n2 = parseInt(midTerm);
+                n3 = parseInt(final);
+                n4 = parseInt(participation);   
+
+        }
+
+        document.forms["myform"].elements["average"].value = average;
+        
+        }
+        </script>
+        
+
+<section class="body">
+        
+    <form name="myform">
+    <table>
+    <h4>Welcome! Please Enter Students Scores</h4>
+    <tr>
+    <td><label for="num1"><strong>Homework Average Score:</strong></label></td>
+    <td><input type="number" name="num1" id="num1"></td>
+    </tr>
+    
+    <tr>
+    <td><label for="num2"><strong>Mid-Term Exam Score:</strong></label></td>
+    <td><input type="number" name="num2"id="num2"></td>
+    </tr>
+
+    <tr>
+    <td><label for="num3"><strong>Final Exam Score:</strong></label></td>
+    <td><input type="number" name id="num3"></td>
+    </tr>
+
+    <tr>
+        <td><label for="num4"><strong>Participation Score:</strong></label></td>
+        <td><input type="number" name id="num4"></td>
+        </tr>
+            
+        <br>
+        <div id ="errOut"></div> 
+    </tr>
+
+    <tr>
+        <td><strong>Final Average:</strong></td>
+        <td><input type="number" name="average" readonly size="50"></td>
+        </tr>
+    
+    <tr>
+        <td><label for="finalGrade"><strong>Your Grade is: </strong></td>
+        <td><input type="text" name id="finalGrade" readonly size="50"></td>
+    </tr>
+    </table>
+    <br><br>
+    
+    <input type="button" onclick="enterNumbers()" value="SUBMIT">
+    <input type="reset" value="RESET" onclick="location.reload();"><br><br>
+    </form>
+    </section>
+
+           
+</body>
+</html>
