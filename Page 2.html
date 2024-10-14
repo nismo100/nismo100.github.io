@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Part 2 of forth homework">
+    <title>Compounding Interest</title>
+
+
+
+</head>
+<body>
+    <!-- Page displays the link to homework 4 assg. -->
+    <body style="background-color:linen">
+    <h1 style="text-align: center; color: brown">Homework 4 - <u>Learn About Compound Interest</u></h1>
+    <a href="hw1.0.html"><button>Back to Home Page</button></a>
+    <p>For homework 4 part 2 contains a tool showing clients how compounding interest works.</p>
+    <p>
+    <a href="hw4.0.html"><link>Back to Homework 4 Main Page</link></a>
+    </p>
+
+    <style>
+        /* my table rows with alternating colors and its own color for heading */
+        table{
+            width:800px;
+            margin:auto;
+            table-layout:fixed;
+            text-align:center;
+            margin-top:50px;
+            font-family:Arial;
+            color:white;
+        }
+        
+        table, th, td{
+            border:1px dotted white;
+            border-collapse:collapse;
+            padding:20px;
+            font-size:20px;
+        }
+        th{
+            background:brown;
+            padding:30px
+        }
+        tr:nth-child(odd) {
+          background-color: blue;
+        }
+        tr:nth-child(even) {
+            background-color:green;
+        }
+        </style>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<div id="tables-container"></div>
+
+<script>
+    // my function to display program when page is opened
+    $(document).ready(function() {
+        const principal = 1000;
+        const rates = [0.05, 0.06, 0.07];
+        const years = 5;
+
+        var htmlRateTable = '';
+
+        //Loop for interest rates and table rendering
+        for (var i = 0; i < rates.length; i++) {
+            const rate = rates[i];
+            htmlRateTable += `<table>
+                <thead>
+                    <tr>
+                        <th>Year</th>
+                        <th>Amount on deposit</th>
+                        <th>Interest Rate</th>
+                    </tr>
+                </thead>
+                <tbody>`;
+
+            // Nested loop for years and computation of compounding rate
+            for (var n = 1; n <= years; n++) {
+                const amount = (principal * Math.pow((1 + rate), n)).toFixed(2);
+                htmlRateTable += `
+                    <tr>
+                        <td>${n}</td>
+                        <td>${amount}</td>
+                        <td>${(rate * 100).toFixed(2)}%</td>
+                    </tr>`;
+            }
+
+            htmlRateTable += `</tbody></table>`;
+        };
+
+        $('#tables-container').html(htmlRateTable);
+    });
+</script>
+              
+</body>
+</html>
+

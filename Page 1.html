@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Part 1 of forth homework">
+    <title>FOR Statement</title>
+</head>
+<body>
+    <!-- Page displays the button to excecute sciprt for while and for loops -->
+    <body style="background-color:rgb(237, 237, 237)">
+    <h1 style="text-align: center; color: turquoise">Homework 4 - <u>Part 1</u></h1>
+    <a href="hw1.0.html"><button>Back to Home Page</button></a>
+    <p>Homework 4 part 1 contains a script using the FOR & WHILE loop statements to calculate 
+        the product and sum of the specified number and displays the results.</p>
+
+    <script>
+        //JavaScript code for the FOR statement computations
+        function forAndWhileLoop()
+        {
+      
+        num1 = 0;
+        num2 = 1;
+        num3 = 0;
+        num4 = 1;
+        var x = 0;
+
+        // For Loop
+        for(i =5; i <=25; i+=4)
+        {
+            num1 = num1 + i;
+            num2 = num2 * i;
+        
+        }        
+        //While Loop
+        while (x < 18)
+        {
+            x = x + 3;
+            num3 = num3 + x;
+            num4 = num4 * x;
+        }
+        document.getElementById("results").innerHTML = "'FOR' loop result for 5 * 9 * 13 * 17 * 21 * 25 is =  " + num2.toLocaleString() + 
+        "<br>'FOR' loop result for 5 + 9 + 13 + 17 + 21 + 25 is =  " + num1 + 
+        "<br>'WHILE' loop result for 3 * 6 * 9 * 12 * 15 * 18 is =  " + num4.toLocaleString() + 
+        "<br>'WHILE' loop result for 3 + 6 + 9 + 12 + 15 + 18 is =  " + num3; 
+    }
+    
+    </script>
+<section class="body"></section>
+
+<input type="button" onclick="forAndWhileLoop()" value="Click for FOR & WHILE loop results">
+<input type="reset" value="RESET" onclick="location.reload();"><br><br>
+<div id ="results"></div>
+
+<p></p>
+    <a href="hw4.0.html"><link>Back to Homework 4 Main Page</link></a>
+    </p>
+           
+</body>
+</html>
